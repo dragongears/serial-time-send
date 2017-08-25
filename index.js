@@ -7,7 +7,7 @@ var sp = new SerialPort("/dev/ttyACM0", {
 // Open serial port
 sp.on('open',function() {
     var date = new Date();
-    var now = Math.floor((date.getTime() + date.getTimezoneOffset() * 60000) / 1000);
+    var now = Math.floor((date.getTime() - date.getTimezoneOffset() * 60000) / 1000);
 
     console.log('Serial port opened');
 
