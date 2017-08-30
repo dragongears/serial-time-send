@@ -16,11 +16,12 @@ sp.on('open',function() {
         console.log('>>>>>', data);
     });
 
-    sp.write('T' + now + '\r');
-    console.log('Date written: T' + now);
-
-    sp.close(function() {
-      console.log('Serial port closed');
+    sp.write('T' + now + '\r', function() {
+      console.log('Date written: T' + now);
+      sp.close(function() {
+        console.log('Serial port closed');
+      });
     });
+
 
 });
